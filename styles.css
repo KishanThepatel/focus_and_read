@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+select, input, button {
+    margin: 5px 0;
+    padding: 5px;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+}
+
+
+body.light {
+    background-color: white;
+    color: black;
+}
+
+body.dark {
+    background-color: black;
+    color: white;
+}
+
+body.sepia {
+    background-color: #f4e1d7; /* Sepia background */
+    color: #5b4c4b; /* Dark brown text */
+}
+
+body.blue {
+    background-color: #e0f7fa; /* Light blue background */
+    color: #006064; /* Dark teal text */
+}
+
+/* Add any other styles as necessary */

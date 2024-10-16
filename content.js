@@ -1,58 +1,37 @@
-// Import the html2pdf library to handle PDF generation (added via a CDN or local file)
-importScripts('html2pdf.bundle.min.js');
-
-// Function to clean and extract the main content using Readability.js
-function cleanPage() {
-  let article = new Readability(document.cloneNode(true)).parse();
-  document.body.innerHTML = '';
-  let content = document.createElement('div');
-  content.id = 'cleaned-content';
-  content.innerHTML = `<h1>${article.title}</h1>${article.content}`;
-  document.body.appendChild(content);
-}
-
-// Apply theme selected by the user
-function applyTheme(theme) {
-  if (theme === 'dark') {
-    document.body.style.backgroundColor = '#333';
-    document.body.style.color = '#fff';
-  } else if (theme === 'sepia') {
-    document.body.style.backgroundColor = '#f4ecd8';
-    document.body.style.color = '#5b4636';
-  } else {
-    document.body.style.backgroundColor = '#fff';
-    document.body.style.color = '#000';
+// Listen for messages from popup.js
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  // Change the theme based on user selection
+  if (request.action === 'changeTheme') {
+      document.body.className = ''; // Reset any existing theme class
+      document.body.classList.add(request.theme); // Set the body's class to the selected theme
   }
-}
 
-// Apply the selected font to the cleaned content
-function applyFont(font) {
-  document.body.style.fontFamily = font;
-}
+  // Change the font based on user selection
+  else if (request.action === 'changeFont') {
+      document.body.style.fontFamily = request.font; // Apply the selected font to the body
+  }
 
-// Function to download the cleaned content as PDF
-function downloadPDF() {
-  let element = document.getElementById('cleaned-content');
-  html2pdf()
-    .from(element)
-    .set({
-      margin: 1,
-      filename: 'Cleaned_Content.pdf',
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-    })
-    .save();
-}
+  // Remove ads from the current page
+  else if (request.action === 'removeAds') {
+      const ads = document.querySelectorAll('.ad, .advertisement, [id*="ad"]'); // Select ad elements by common classes and ID patterns
+      ads.forEach(ad => ad.remove()); // Remove each ad element found
 
-// Listen for messages from the popup to clean content, apply theme, apply font, or download content
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message.action === "clean") {
-    cleanPage();
-  } else if (message.action === "applyTheme") {
-    applyTheme(message.theme);
-  } else if (message.action === "applyFont") {
-    applyFont(message.font);
-  } else if (message.action === "download") {
-    downloadPDF();
+      // Create and display a message indicating ads have been removed
+      const message = document.createElement('div');
+      message.textContent = 'Ads have been successfully removed!';
+      message.style.position = 'fixed';
+      message.style.top = '10px';
+      message.style.right = '10px';
+      message.style.padding = '10px';
+      message.style.backgroundColor = '#4CAF50'; // Green background
+      message.style.color = 'white'; // White text
+      message.style.borderRadius = '5px';
+      message.style.zIndex = '10000'; // Ensure it's above other elements
+      document.body.appendChild(message);
+
+      // Remove the message after a few seconds
+      setTimeout(() => {
+          message.remove();
+      }, 3000);
   }
 });

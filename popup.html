@@ -1,46 +1,35 @@
-<!DOCTYPE html>
 <html>
 <head>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 10px;
-    }
-    button {
-      padding: 10px;
-      font-size: 16px;
-    }
-    select {
-      padding: 5px;
-      font-size: 14px;
-    }
-  </style>
+    <title>PDF & Dictionary Extension</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h2>Reading Mode</h2>
-  
-  <button id="enableMode">Enable Distraction-Free Mode</button>
-  <br><br>
-  
-  <label for="theme">Select Theme:</label>
-  <select id="theme">
-    <option value="light">Light</option>
-    <option value="dark">Dark</option>
-    <option value="sepia">Sepia</option>
-  </select>
-  <br><br>
-  
-  <label for="font">Select Font:</label>
-  <select id="font">
-    <option value="Arial">Arial</option>
-    <option value="Georgia">Georgia</option>
-    <option value="Times New Roman">Times New Roman</option>
-    <option value="Courier New">Courier New</option>
-  </select>
-  <br><br>
+    <h1>PDF & Dictionary</h1>
+    <select id="theme-select">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="sepia">Sepia</option>
+        <option value="blue">Blue</option>
+    </select>
+    <button id="apply-theme">Apply Theme</button>
 
-  <button id="downloadContent">Download Cleaned Content as PDF</button>
+    <select id="font-select">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="Tahoma, sans-serif">Tahoma</option>
+        <option value="Courier New, monospace">Courier New</option>
+    </select>
+    <button id="apply-font">Change Font</button>
+    <button id="remove-ads">Remove Ads</button>
 
-  <script src="popup.js"></script>
+    <input type="text" id="url-input" placeholder="Enter URL to convert to PDF" />
+    <button id="generate-pdf">Generate PDF</button>
+    <progress id="progress-bar" value="0" max="100" style="display:none;"></progress>
+
+    <input type="text" id="word-input" placeholder="Enter a word" />
+    <button id="get-definition">Get Definition</button>
+    <div id="definition"></div>
+    <script src="popup.js"></script>
 </body>
 </html>
