@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Custom PDF and Dictionary Extension",
+  "name": "Read Clear",
   "version": "1.0",
   "permissions": [
     "activeTab",

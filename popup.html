@@ -3,33 +3,46 @@
     <title>PDF & Dictionary Extension</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Read Clear</title>
 </head>
 <body>
-    <h1>PDF & Dictionary</h1>
-    <select id="theme-select">
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="sepia">Sepia</option>
-        <option value="blue">Blue</option>
-    </select>
-    <button id="apply-theme">Apply Theme</button>
-
-    <select id="font-select">
-        <option value="Arial, sans-serif">Arial</option>
-        <option value="Georgia, serif">Georgia</option>
-        <option value="Tahoma, sans-serif">Tahoma</option>
-        <option value="Courier New, monospace">Courier New</option>
-    </select>
-    <button id="apply-font">Change Font</button>
-    <button id="remove-ads">Remove Ads</button>
-
-    <input type="text" id="url-input" placeholder="Enter URL to convert to PDF" />
-    <button id="generate-pdf">Generate PDF</button>
-    <progress id="progress-bar" value="0" max="100" style="display:none;"></progress>
-
-    <input type="text" id="word-input" placeholder="Enter a word" />
-    <button id="get-definition">Get Definition</button>
-    <div id="definition"></div>
+    <p class="theme">Content That Matters</p>
+    <p class="logo">Read Clear</p><i class='bx bx-file bx-lg'></i>
+    <div class="buttons">
+        <div>
+            <span class="theme-select">
+                <select id="btn1-select1">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </span>    
+        <button class="second-btn" id="apply-theme">Apply Theme</button>
+        </div>
+        <div>
+            <select id="btn-select2">
+                <option value="Arial, sans-serif">Arial</option>
+                <option value="Georgia, serif">Georgia</option>
+                <option value="Tahoma, sans-serif">Tahoma</option>
+                <option value="Courier New, monospace">Courier New</option>
+            </select>
+            <button id="apply-font">Change Font</button>
+        </div>
+        <div>
+            <button id="remove-ads">Remove Ads</button>
+        </div>    
+        <div>
+            <input type="text" id="url-input" placeholder="Enter URL:" />
+            <button id="generate-pdf">Generate PDF</button>
+            <progress id="progress-bar" value="0" max="100" style="display:none;"></progress>
+        </div>   
+    </div>    
+        <input type="text" id="word-input" placeholder="Enter a word:" />
+        <button id="get-definition">Get Definition</button>
+        <div id="definition"></div>
+        <div class="footer">
+            <p>"Transform your browsing experience with READ CLEAR that enhances readability by removing ads, distractions, and leaving you with a clean, focused view of the content that matters."</p>
+        </div>
     <script src="popup.js"></script>
 </body>
 </html>
