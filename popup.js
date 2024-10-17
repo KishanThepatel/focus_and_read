@@ -54,10 +54,10 @@ document.getElementById("generate-pdf").addEventListener("click", () => {
         if (data.error) {
             throw new Error(data.message);
         }
-        // File URL to download
+        // File URL to download and open directly
         const downloadUrl = data.url;
         progressBar.value = 100; // Set progress to complete
-        alert("PDF generated successfully! Download link: " + downloadUrl);
+        window.open(downloadUrl, '_blank'); // Open the PDF in a new tab
     })
     .catch(err => {
         console.error("Error generating PDF: ", err);
