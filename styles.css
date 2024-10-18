@@ -165,6 +165,7 @@ progress {
     user-select: text;
     color: #645f5f;
     font-size: 16px;
+    padding-left: 42px;
 }
 
 #get-definition{
@@ -204,4 +205,23 @@ button:hover{
 
 button:active{
     filter: brightness(120%);
+}
+
+.noAd{
+    position: absolute;
+    left: 15px;
+    top: 264px;
+    fill: aliceblue;
+    cursor: pointer;
+}
+
+.noAd:hover{
+    filter: brightness(85%);
+}
+
+.bx-search{
+    position: absolute;
+    top: 435px;
+    left: 13px;
+    cursor: text;
 }
