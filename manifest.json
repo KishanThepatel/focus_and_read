@@ -10,9 +10,9 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon.jpg",
-      "48": "icon.jpg",
-      "128": "icon.jpg"
+      "16": "ad_blocker.png",
+      "48": "ad_blocker.png",
+      "128": "ad_blocker.png"
     }
   },
   "background": {

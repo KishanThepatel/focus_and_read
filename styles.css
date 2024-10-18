@@ -6,12 +6,23 @@
     user-select: none;
 }
 
+body.light-mode {
+    background-color: #7fbec5;
+    color: aliceblue;
+}
+
+body.dark-mode {
+    background-color: rgb(47, 79, 91);
+    color: aliceblue;
+}
+
 body{
     background-color: #7fbec5;
     width: 400px;
     height: 650px;
     padding: 10px;
 }
+
 
 .theme{
     font-size: 20px;
@@ -53,6 +64,7 @@ body{
     color: #645f5f;
     font-size: 16px;
     margin-right: 4px;
+    animation: ;
 }
 
 #apply-theme.second-btn{
@@ -182,4 +194,14 @@ progress {
     color: #1e1d1d;
 }
 
+button{
+    animation: ease all 1s;
+}
 
+button:hover{
+    filter: brightness(85%);
+}
+
+button:active{
+    filter: brightness(120%);
+}
