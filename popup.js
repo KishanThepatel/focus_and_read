@@ -1,10 +1,11 @@
-document.getElementById("apply-theme").addEventListener("click", () => {
-    const selectedTheme = document.getElementById("theme-select").value;
+document.getElementById("btn1-select1").addEventListener("click", () => {
+    const selectedTheme = document.getElementById("btn1-select1").value;
 
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, { action: 'changeTheme', theme: selectedTheme });
     });
 });
+
 
 document.getElementById("apply-font").addEventListener("click", () => {
     const selectedFont = document.getElementById("font-select").value;

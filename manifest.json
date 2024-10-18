@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Custom PDF and Dictionary Extension",
+  "name": "Read Clear",
   "version": "1.0",
   "permissions": [
     "activeTab",
@@ -10,9 +10,9 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon.jpg",
-      "48": "icon.jpg",
-      "128": "icon.jpg"
+      "16": "ad_blocker.PNG",
+      "48": "ad_blocker.PNG",
+      "128": "ad_blocker.PNG"
     }
   },
   "background": {
