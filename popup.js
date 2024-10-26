@@ -35,7 +35,8 @@ document.getElementById("generate-pdf").addEventListener("click", () => {
     progressBar.style.display = "block";
     progressBar.value = 0;
 
-    const apiKey = 'rizwanahamed2726@gmail.com_nCKqJAzwFt9CoLJTpYVjkZJ15fIng4f0amQUKpfhywrEpyqhW5onHMOmneR5V6bQ'; // Replace with your actual PDF.co API key
+    const apiKey =
+      "seekkishanpatel@gmail.com_wCvQLX70qqF736Kcewn56ub3zWkG9BmxR060qTH99qV0rS2hoi4mb9lGqc6iKehj";
 
     fetch('https://api.pdf.co/v1/pdf/convert/from/url', {
         method: 'POST',
